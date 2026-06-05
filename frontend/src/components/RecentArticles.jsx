@@ -1,47 +1,65 @@
 function RecentArticles({ articles }) {
+  return (
+    <div className="bg-white rounded-xl shadow-lg p-6 mt-8">
 
-    return (
+      <h2 className="text-2xl font-bold mb-4">
+        Recent Articles
+      </h2>
 
-        <div>
+      <div className="overflow-x-auto">
 
-            <h2>Recent Articles</h2>
+        <table className="min-w-full">
 
-            <table border="1">
+          <thead>
+            <tr className="border-b">
+              <th className="text-left p-3">
+                Title
+              </th>
 
-                <thead>
-                    <tr>
-                        <th>Title</th>
-                        <th>Sentiment</th>
-                    </tr>
-                </thead>
+              <th className="text-left p-3">
+                Sentiment
+              </th>
+            </tr>
+          </thead>
 
-                <tbody>
+          <tbody>
 
-                    {
-                        articles.map(article => (
+            {articles.map((article) => (
+              <tr
+                key={article.id}
+                className="border-b hover:bg-slate-50"
+              >
+                <td className="p-3">
+                  {article.title}
+                </td>
 
-                            <tr key={article.id}>
+                <td className="p-3">
 
-                                <td>
-                                    {article.title}
-                                </td>
+                  <span
+                    className={`px-3 py-1 rounded-full text-white text-sm
+                    ${
+                      article.sentiment === "positive"
+                        ? "bg-green-500"
+                        : article.sentiment === "negative"
+                        ? "bg-red-500"
+                        : "bg-yellow-500"
+                    }`}
+                  >
+                    {article.sentiment}
+                  </span>
 
-                                <td>
-                                    {article.sentiment}
-                                </td>
+                </td>
+              </tr>
+            ))}
 
-                            </tr>
+          </tbody>
 
-                        ))
-                    }
+        </table>
 
-                </tbody>
+      </div>
 
-            </table>
-
-        </div>
-
-    );
+    </div>
+  );
 }
 
 export default RecentArticles;
