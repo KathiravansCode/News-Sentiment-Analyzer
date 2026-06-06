@@ -21,5 +21,6 @@ app.add_middleware(
 @app.get("/health")
 def health():
     return {
-        "status": "running"
+        "status": "running",
+        "version":"2.0"
     }
