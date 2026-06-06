@@ -94,15 +94,13 @@ function Dashboard() {
 
       </div>
 
-      {summary && (
-        <>
-          <SummaryCards summary={summary} />
-
-          <SentimentChart summary={summary} />
-
-          <RecentArticles articles={articles} />
-        </>
-      )}
+    {summary && (
+  <>
+    <SummaryCards summary={summary} />
+    <SentimentChart summary={summary} />
+    <RecentArticles articles={articles} />
+  </>
+)}
 
     </div>
   );
