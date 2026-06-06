@@ -62,7 +62,7 @@ function Dashboard() {
     <div className="max-w-7xl mx-auto p-6">
 
       <h1 className="text-5xl font-bold text-center mb-3">
-        AI News Sentiment Analyzer
+        AI-powered News Sentiment Analyzer
       </h1>
 
       <p className="text-center text-gray-600 mb-8">
