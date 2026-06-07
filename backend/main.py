@@ -22,6 +22,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "https://newssentiment.duckdns.org",
+        "https://d3btl83f079xnk.cloudfront.net",
         "http://localhost:5173",
         "http://localhost:4173"
     ],
